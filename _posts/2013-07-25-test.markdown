@@ -1,0 +1,8 @@
+---
+author: Alexandre Normand
+comments: true
+layout: post
+title: Test for the post layout
+---
+
+Placeholder to test the layout for a post.
