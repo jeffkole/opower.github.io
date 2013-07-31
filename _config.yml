@@ -2,3 +2,4 @@ name: Opower Engineering Blog
 markdown: redcarpet
 pygments: true
 permalink: /:year/:month/:day/:title
+exclude: [CONTRIBUTING.md, Gemfile, Gemfile.lock, README.md]
