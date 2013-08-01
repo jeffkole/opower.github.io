@@ -20,9 +20,18 @@ if [[ ! -r _config.yml ]]; then
     exit 1
 fi
 
-bundle exec jekyll build
+# Update the content in the submodule first
 cd _site
-git diff
+git pull git@github.com:opower/opower.github.io.git master
+
+# Now generate the new content
+cd ..
+bundle exec jekyll build
+
+# Show off the diff
+cd _site
+git add .
+git diff --cached
 echo "Did that all look like what you expected?" >&2
 echo "Are you ready to commit that content change?" >&2
 echo "Once you type 'y', I will push the content live" >&2
@@ -32,10 +41,11 @@ if [[ "$RESPONSE" != "y" ]]; then
     exit 0
 fi
 
-git commit -am "Publishes new content"
+# Push the content and the submodule SHA
+git commit -m "Publishes new content"
 git push git@github.com:opower/opower.github.io.git master
 cd ..
-git commit -m "Syncs submodule with new publised content" _site
+git commit -m "Syncs submodule with new published content" _site
 git push git@github.com:opower/opower.github.io.git working
 
 echo "Content published.  Check out http://opower.github.io"
