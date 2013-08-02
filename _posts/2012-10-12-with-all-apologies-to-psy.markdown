@@ -12,4 +12,4 @@ categories:
 
 Friday afternoon snippet of South Korea's Macarena by Opower's own Wayne Lin and Eddy Leung in our Arlington HQ elevator bank.
 
-http://www.youtube.com/watch?v=7Fa7KW5AfXQ
+<iframe width="420" height="315" src="//www.youtube.com/embed/7Fa7KW5AfXQ?rel=0" frameborder="0" allowfullscreen></iframe>
