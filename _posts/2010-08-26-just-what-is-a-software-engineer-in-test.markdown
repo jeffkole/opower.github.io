@@ -16,17 +16,9 @@ OPOWER recently updated the job titles for our QA engineers to more  properly re
 
 It's pretty clear to just about anyone what the goals of a software  engineer are when taken in a development context. Build software that  does useful work correctly and efficiently. It's a little more fuzzy  when you assess that title from a testing perspective.
 
-
-
-	
   * Is it a tool-smith? Building test frameworks and automation  tools for other testers to use? Not exclusively, but tools and  frameworks that more junior test engineers can use and learn from are  great side effects of the work.
-
-	
   * Is it someone who uses GUI testing frameworks to follow along behind  the developers and make sure they got the user experience right? Again,  a part of the job sometimes, but not the primary mission.
-
-	
   * Now  put on your tinfoil hat. Is it just a conceit meant to soothe the sting  of being a second class creator of software artifacts? Someone who can  code but not well enough to be a developer? Probably not anyone's  explicit intent, but some folks do feel that SEiT is a farm league for  the Big Show: being a developer. We are not among those people.
-
 
 A Software Engineer in Test is someone that builds software that  does useful work correctly and efficiently. Wait. That's exactly the  same definition as was given for a developer. What gives?
 

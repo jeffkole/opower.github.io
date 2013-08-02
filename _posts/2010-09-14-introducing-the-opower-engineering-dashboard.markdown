@@ -20,41 +20,15 @@ We brainstormed beforehand, and came up with a lot of ideas. However, to make su
 
 This turned out to be setting the bar way too low - 10 hours of non-stop coding later, we managed to have a working dashboard that displays the following:
 
-
-
-
-	
   * How much time is left in the current iteration.
-
-	
-  * The number of story points each team has completed for the current iteration, and how many more are left.
-  ![Dashboard story points](/img/story_points-300x189.png)
-
-	
+  * The number of story points each team has completed for the current iteration, and how many more are left. ![Dashboard story points](/img/story_points-300x189.png)
   * The status of our Hudson continuous integration server. If someone breaks the build, the dashboard bursts into flames.
-
-	
   * Any urgent production issues. (Once again, burning).
-
-	
-  * The X-Train Wall of Shame. It tracks how many times everyone has broken the build, as well as how many times they have atoned for it by buying everyone a drink.![The X train cometh](/img/x_train-300x176.png)
-
-
-	
-  * Who is on vacation, and who will be on vacation soon. (Courtesy of Google Calendar).![Slackers on vacation](/img/vacation-300x246.png)
-
-
-	
-  * When the next trains are coming to the Courthouse Metro station.![Trains at Courthouse](/img/metro.png)
-
-
-	
+  * The X-Train Wall of Shame. It tracks how many times everyone has broken the build, as well as how many times they have atoned for it by buying everyone a drink. ![The X train cometh](/img/x_train-300x176.png)
+  * Who is on vacation, and who will be on vacation soon. (Courtesy of Google Calendar). ![Slackers on vacation](/img/vacation-300x246.png)
+  * When the next trains are coming to the Courthouse Metro station. ![Trains at Courthouse](/img/metro.png)
   * A Twitter feed of tweets mentioning OPOWER.
-
-	
   * Random selections from the company quote wall.
-
-
 
 We've been using the dashboard for about an iteration now, and it's been a big success. It gives everyone (including people outside of engineering) an easy way to see where we are. Since the TV is mounted along one of the main office thoroughfares, people are always stopping to check it out throughout the day.
 

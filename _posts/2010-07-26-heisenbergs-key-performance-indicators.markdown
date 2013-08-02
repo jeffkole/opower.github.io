@@ -17,24 +17,14 @@ I was trolling trawling through reddit waiting for a JAR to compile and [found t
 
 [Goodhart's Law](http://en.wikipedia.org/wiki/Goodhart%27s_law): _Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes_
 
-Here at OPOWER, developers and product managers don't deal with KPIs on a day-to-day basis....I think it's mostly a management-level "let's starting capturing some numbers over several months and see if there's anything out-of-whack" kind of thing.
+Here at OPOWER, developers and product managers don't deal with KPIs on a day-to-day basis. I think it's mostly a management-level "let's starting capturing some numbers over several months and see if there's anything out-of-whack" kind of thing.
 
 In terms of development KPIs, some of the things we thought it might be interesting to collect included:
 
-
-
-	
   * story points delivered per iteration
-
-	
   * % of story points (aggregate) done in an iteration that were planned at the beginning
-
-	
   * % QA coverage of production (automated)
-
-	
   * etc.
-
 
 The "story points delivered per iteration" is, I think, precisely the kind of thing Goodhart was talking about when he made up his law.  _That said_, we are a business and we are expected to work and be productive, so it isn't exactly a satisfying for a VP or CEO to hear from their dev team "sorry, you can't measure us because we'll just skew the measurement number to please you."  So what's management to do with their IT cabal?
 
