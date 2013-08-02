@@ -1,5 +1,5 @@
 name: Opower Engineering Blog
-markdown: redcarpet
+markdown: kramdown
 pygments: true
 permalink: /:year/:month/:day/:title
 exclude: [bin, CONTRIBUTING.md, Gemfile, Gemfile.lock, README.md]
