@@ -3,3 +3,4 @@ markdown: redcarpet
 pygments: true
 permalink: /:year/:month/:day/:title
 exclude: [bin, CONTRIBUTING.md, Gemfile, Gemfile.lock, README.md]
+paginate: 5
