@@ -24,61 +24,31 @@ The 3.3 lunch and learn was intro'd by Chris from SiteWorx who surveyed the CMS 
 
 Richard Im from Alfresco then spoke for about 45 minutes about the new features Alfresco 3.3 contained:
 
-**WCM Improvements**
+### WCM Improvements
 
-
-
-	
   * new web-based editor, reminiscent of Interwoven's in-context editor from the 6.5/7.0 era
-
-	
   * new bi-directional deployment capabilities (including addition of "delivery server" infrastructure possibilities like several other CMS offerings)
-
-	
   * "Straight through" publishing without workflows
-
-	
   * google-like search on metadata attributes
 
+### Share
 
-**Share**
-
-
-
-	
   * Evolving share into more of a bit-for-bit replacement of the "traditional" UI (which Richard referred to as "DM"... "document manager?")
-
-	
   * Permission control a la DM
-
-	
   * Rules and Actions just like in DM
-
-	
   * Data Lists (like Share Point's project lists)
 
 
 I asked the question: "what's the medium-term road map for DM, if Alfresco seems intent on mirroring all(?) functionality in the traditional UI via the /share context?"  Richard wouldn't definitively say that the traditional app is going to be deprecated any time soon, but it certainly appears that way...
 
-**"Integration" improvements**
+### "Integration" improvements
 
 I think this suite of improvements is geared towards the enterprise crowd:
 
-
-
-	
   * Full CMIS 1.0 spec implemented as of 3.3 (the only open source implementation known to do so)
-
-	
   * ACLs
-
-	
   * Change Logs
-
-	
   * Additional SOA/REST services and support
-
-	
   * Ability to save off google docs in alfresco for management (!)
 
 

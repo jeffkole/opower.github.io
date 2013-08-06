@@ -20,7 +20,7 @@ Into that mold, I poured elmer's glue, hair shavings, 14 gauge electrical copper
 
 [![cinco_assembly](http://farm5.static.flickr.com/4035/4581864452_ba14d1b7ab.jpg)](http://www.flickr.com/photos/tom_vaughan/4581864452/)
 
-This morning, the _plan _was to simply glue the assembled mustache on to my real mustache.  Unfortunately, the plan involved entirely too much super glue and the assembled mustache pieces proved to be entirely too heavy.  My previous experience with krazy-glue-on-skin is probably like most people's...stick your thumb and index finger together.  Thanks to callouses, a lack of hair on your fingertips and the relative strength of your digits, it's not that big of a deal.  I also don't remember the glue _burning like lava on contact._
+This morning, the _plan_ was to simply glue the assembled mustache on to my real mustache.  Unfortunately, the plan involved entirely too much super glue and the assembled mustache pieces proved to be entirely too heavy.  My previous experience with krazy-glue-on-skin is probably like most people's... stick your thumb and index finger together.  Thanks to callouses, a lack of hair on your fingertips and the relative strength of your digits, it's not that big of a deal.  I also don't remember the glue _burning like lava on contact._
 
 A split second before squirting a liberal does of krazy glue on the mustache I wondered: "is this really a good idea?"  But not wanting to pysch myself out, I quickly brought the assembled mustache up to my lip and pressed down hard.
 
@@ -30,7 +30,7 @@ That thought was quickly replaced with a rising alarm about the rapidly increasi
 
 Not-quite-panicked, but not totally calm either, I gently tried to remove the mustache and got as far as pulling my lip about an inch off my face before giving up.  Over the next 10 minutes I was able to saw, snip and shave the 'stache down with a combination of electric shaver, electrical pliers, scissors and razor blade.  By that time, of course, the fumes had dissipated and the burning was just a low heat and my grand mustache plans were wrecked.
 
-[![cinco_fail_2](http://farm5.static.flickr.com/4021/4581214623_05e508de62.jpg)](http://www.flickr.com/photos/tom_vaughan/4581214623/)
+[![cincofail2](http://farm5.staticflickr.com/4021/4581214623_05e508de62_d.jpg)](http://www.flickr.com/photos/tom_vaughan/4581214623/)
 
 _The redness of my eyes is due to the fumes and pain._
 

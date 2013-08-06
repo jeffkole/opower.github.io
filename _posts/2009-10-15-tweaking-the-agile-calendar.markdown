@@ -13,23 +13,11 @@ categories:
 
 For the first five iterations, the dev team had been following this schedule:
 
-
-
-	
   * Iteration N, Week 1 = Design for iteration N and 2nd week of QA for iteration N-1
-
-	
   * Iteration N, Week 2 = Development
-
-	
   * Iteration N, Week 3 = Development
-
-	
   * Iteration N, Week 4 = 1st week of QA for iteration N
-
-	
   * Iteration N, Week 5 / Iteration N +1, Week 1 = 2nd week of QA for iteration N, design for iteration N + 1
-
 
 We started to notice a couple things that have caused us to try out a new schedule in our upcoming 6th iteration.
 
@@ -41,12 +29,8 @@ I know.  We cringed too.
 
 We're committing to a couple new explicit practices going in to our next iterations:
 
-	
   1. More formal velocity check-ins.  If less than 50% of our story points are closed by COB of the first Friday, we should have a come-to-jeebus meeting on Monday morning.
-
-	
   2. We absolutely need to respect the impact that dedicated design time has on the effectiveness of everything down-stream.  It's too easy to say "Agile" as a synonym for "code by the seat of your pants," but that's not what it's about and we know that.  We just need to get better at dedicating time to it.
-
 
 So with those ideas in mind, we're moving to something like the following:
 

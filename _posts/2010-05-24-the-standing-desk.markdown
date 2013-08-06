@@ -32,18 +32,9 @@ Dave's setup is very similar, but he seems to like focusing _down_ on his single
 
 It's been a couple weeks since I switched and I can draw the following conclusions so far:
 
-
-
-	
   * Your feet hurt like a sonofabitch at the end of 8, 9, 10 hours if you're not used to standing that whole time
-
-	
   * A little bar stool or some off-the-floor step helps a lot in shifting your weight around so you're not always bearing down on both heels
-
-	
   * My back feels a ton better
-
-	
   * I _feel_ more productive (though I don't know empirically if I actually am) because (a) I feel really focused on the monitor right in front of me -- more so than when sitting down and (b) I'm a little more self-conscious of my screen being visible to everyone walking by, so I suspect I've got a higher percentage of work-related stuff on my screen at all times than I did before.
 
 
