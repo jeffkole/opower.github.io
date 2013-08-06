@@ -48,3 +48,12 @@ body {
   margin-top: 4px;
   margin-bottom: 4px;
 }
+
+.navbar a.navbar-brand {
+  font-size: 200%;
+}
+
+.navbar a.navbar-brand b {
+  font-size: 75%;
+  font-family: "pluggy";
+}
