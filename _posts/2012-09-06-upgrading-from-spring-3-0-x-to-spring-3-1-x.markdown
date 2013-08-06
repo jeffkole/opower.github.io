@@ -110,7 +110,7 @@ public int getRawStatusCode() throws IOException {
 
 At Opower, we explicitly spell out what XSD versions we pull in to our spring contexts (instead of just leaving the version off which defaults to the latest published version).  This makes upgrades like this more tedious, and in one case caused some digging to figure out that the spring tag library we were using for spring-security wasn't compatible with a transitive spring-security dependency being pulled in from spring-security-oauth.  If you get errors like "spring security tag 3.0 library incompatible with class ... blah" make sure:
 
-  1. your spring context's XSD is pointing to `http://www.springframework.org/schema/security/spring-security-3.1.xsd`
+  1. your spring context's XSD is pointing to `http://www.springframework.org/schema/security/spring-security-3.1.xsd`
   2. your mvn dependency:tree is pulling in spring-security-3.1
 
 ### Spring 3.1 Security's Taglib has a package change.
