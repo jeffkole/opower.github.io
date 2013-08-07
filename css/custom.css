@@ -83,3 +83,12 @@ body {
   font-size: 75%;
   font-family: "pluggy";
 }
+
+/* Make sure the list group within a panel does not duplicate the border */
+.panel .list-group-item {
+  border: none;
+}
+
+.project {
+  font-size: 75%;
+}
