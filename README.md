@@ -45,6 +45,10 @@ Posts should follow these standards:
 
 * Written in Markdown using [kramdown][]'s syntax extensions
 * End with a `.markdown` extension
+* Include at least the following in the [YAML Front Matter][yaml]:
+  * `layout: post`
+  * `title: <The post title>`
+  * `author: <first.last>`
 * Wrap at 80 characters
 * Use the [`{% highlight %}`][highlight] tag around code blocks, preferably
   specifying the language
@@ -59,3 +63,4 @@ for Markdown files to have vim wrap automatically for you.
 [highlight]: http://jekyllrb.com/docs/posts/#highlighting_code_snippets
 [vm]: https://github.com/tpope/vim-markdown
 [path]: https://github.com/tpope/vim-pathogen
+[yaml]: http://jekyllrb.com/docs/frontmatter/
