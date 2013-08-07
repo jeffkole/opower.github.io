@@ -1,5 +1,8 @@
 name: Opower Engineering Blog
-markdown: redcarpet
+description: The blog of the Opower engineering team.
+url: http://opower.github.io
+markdown: kramdown
 pygments: true
 permalink: /:year/:month/:day/:title
 exclude: [bin, CONTRIBUTING.md, Gemfile, Gemfile.lock, README.md]
+paginate: 5

@@ -30,32 +30,33 @@ Just looking at the stack trace narrows it down immediately:
 
 Ahh...yeah...that custom hibernate type I wrote to translate VARCHARs to InternetAddresses and vice versa.  Ok, what does that deep copy method look like?
 
-    
-        public Object deepCopy(Object value) throws HibernateException {
-            if(value == null) {
-                return null;
-            }
-            InternetAddress original = (InternetAddress)value;
-            InternetAddress copy = null;
-            try {
-                copy = new InternetAddress(original.getAddress());
-            }
-            catch (AddressException ex) {
-                throw new HibernateException("Unable to deep copy email address '" + original.getAddress() + "'");
-            }
-            return copy;
-        }
-
+{% highlight java %}    
+public Object deepCopy(Object value) throws HibernateException {
+    if(value == null) {
+        return null;
+    }
+    InternetAddress original = (InternetAddress)value;
+    InternetAddress copy = null;
+    try {
+        copy = new InternetAddress(original.getAddress());
+    }
+    catch (AddressException ex) {
+        throw new HibernateException("Unable to deep copy email address '" + original.getAddress() + "'");
+    }
+    return copy;
+}
+{% endhighlight %}
 
 It turns out, the error is right here:
 
-    
-                copy = new InternetAddress(original.getAddress());
+{% highlight java %}
+copy = new InternetAddress(original.getAddress());
+{% endhighlight %}
 
-
-You can't pass a null to the InternetAddress constructor.  It was late in the day and I must not have internalized that there's no way _value _or _original_ could be null, because my first instinct was that the NPE was actually the result of calling ".getAddress()" on a null _original_ object....not that the constructor can't take a null.
+You can't pass a null to the InternetAddress constructor.  It was late in the day and I must not have internalized that there's no way _value_ or _original_ could be null, because my first instinct was that the NPE was actually the result of calling ".getAddress()" on a null _original_ object....not that the constructor can't take a null.
 
 While I was on that assumption (that it was the _original_ object that was null), I fired up my debugger and got confused by what appeared to be null-checks failing to check nulls. Check out this screen shot of the NPE about to be thrown after what appears to be 2 null checks failing to prevent the NPE:
+
 ![null_internet_address](/img/null_internet_address.png)
 
 The arrows marked (A) and (B) shows what appear to be null objects passing null checks (in the top pane) even though they're being reported as null (in the bottom pane).  The green line (C) shows the code falling through to that line just before it throws up the NPE.
@@ -63,21 +64,20 @@ The arrows marked (A) and (B) shows what appear to be null objects passing null 
 Of course, _value_ and _original_ aren't null at all...it's just that their .toString() methods report them to be null.  Here's the InternetAddress.toString method:
 
     
-      276       public String toString() {
-      277   	if (encodedPersonal == null && personal != null)
-      278   	    try {
-      279   		encodedPersonal = MimeUtility.encodeWord(personal);
-      280   	    } catch (UnsupportedEncodingException ex) { }
-      281
-      282   	if (encodedPersonal != null)
-      283   	    return quotePhrase(encodedPersonal) + " <" + address + ">";
-      284   	else if (isGroup() || isSimple())
-      285   	    return address;
-      286   	else
-      287   	    return "<" + address + ">";
-      288       }
+    276   public String toString() {
+    277       if (encodedPersonal == null && personal != null)
+    278           try {
+    279	              encodedPersonal = MimeUtility.encodeWord(personal);
+    280           } catch (UnsupportedEncodingException ex) { }
+    281
+    282       if (encodedPersonal != null)
+    283           return quotePhrase(encodedPersonal) + " <" + address + ">";
+    284       else if (isGroup() || isSimple())
+    285           return address;
+    286       else
+    287           return "<" + address + ">";
+    288   }
 
+In my situation, I fell in to the `else if(isGroup() || isSimple())` case, which returns `address`, which is null, so the `.toString()` for the whole InternetAddress object is "null."
 
-In my situation, I fell in to the "else if(isGroup() || isSimple())" case, which returns _address_, which is null, so the .toString() for the whole InternetAddress object is "null."
-
-I think the toString() method could benefit from another null-check right at line 284, which would mean an InternetAddress object with a null internal _address_ String would display as "<null>"...that's a more immediate clue that the object itself isn't null.
+I think the toString() method could benefit from another null-check right at line 284, which would mean an InternetAddress object with a null internal `address` String would display as "\<null\>" ...that's a more immediate clue that the object itself isn't null.

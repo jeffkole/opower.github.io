@@ -12,7 +12,7 @@ categories:
 
 Lately I've been thinking about the notion of "beautiful code", and finding it to be less and less satisfying as a goal.  First off, beauty is elusive: everyone seems to have a different concept of what it means (and except for mine, they're all wrong).  And second, even when you can label a piece of code as "beautiful", it's not at all clear how that translates into other desirable characteristics like performance, maintainability, and so forth.
 
-In my reading, I came across a great article by Rebecca Wirfs-Brock [1] in which she discusses the notion of "habitable code".  This idea isn't original to her (she credits Richard Gabriel in Patterns of Software [2]), but she provides a great explanation of the concept, and goes on to talk about its role in complex systems.
+In my reading, I came across a great article by Rebecca Wirfs-Brock[^1] in which she discusses the notion of "habitable code".  This idea isn't original to her (she credits Richard Gabriel in Patterns of Software[^2]), but she provides a great explanation of the concept, and goes on to talk about its role in complex systems.
 
 Paraphrasing some key points ...
 
@@ -35,7 +35,6 @@ Just like any other principles, these can be reduced to absurdity.  Giving up co
 
 So ... who's inhabiting your code today?  Whose code are you inhabiting?  How is that going to change in a month?  Six months?  A year?  And what are you doing to make each other feel welcome and at home?
 
-**References**
 
-[1] [http://www.wirfs-brock.com/PDFs/DoesBeautifulCodeImply.pdf](http://www.wirfs-brock.com/PDFs/DoesBeautifulCodeImply.pdf)
-[2] [http://dreamsongs.net/Files/PatternsOfSoftware.pdf](http://dreamsongs.net/Files/PatternsOfSoftware.pdf)
+[^1]: [Does Beautiful Code Imply Beautiful Design](http://www.wirfs-brock.com/PDFs/DoesBeautifulCodeImply.pdf) by Rebecca Wirfs-Brock.
+[^2]: [Patterns of Software: Tales from the Software Community](http://dreamsongs.net/Files/PatternsOfSoftware.pdf) by Richard P. Gabriel.

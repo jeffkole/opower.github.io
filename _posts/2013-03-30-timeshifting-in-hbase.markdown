@@ -50,18 +50,12 @@ pattern is to query for all data from the beginning of "last year" up to now,
 because we need that much data for many analyses.  If we ran a `get` for this
 data, it would normally be set up like this (in pseudo-code, of course):
 
-
-
-
-    
-    Get get = new Get(rowkey);
-    get.addColumn("data");
-    get.addColumn("metadata");
-    get.setTimeRange(2012, 2013);
-
-
-
-
+{% highlight java %}
+Get get = new Get(rowkey);
+get.addColumn("data");
+get.addColumn("metadata");
+get.setTimeRange(2012, 2013);
+{% endhighlight %}
 
 Unfortunately that `get` would not return us any data for the metadata column,
 because there is no valid cell in that timerange.  We have two options: make
@@ -100,10 +94,12 @@ setting an ending timestamp to be the logical "end of time":
 
 
     
-    Get get = new Get(rowkey);
-    get.addColumn("data");
-    get.addColumn("metadata");
-    get.setTimeRange(2012, Long.MAX_LONG);
+{% highlight java %}
+Get get = new Get(rowkey);
+get.addColumn("data");
+get.addColumn("metadata");
+get.setTimeRange(2012, Long.MAX_LONG);
+{% endhighlight %}
 
 
 

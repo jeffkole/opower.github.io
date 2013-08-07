@@ -1,13 +1,33 @@
 ---
 layout: default
-title: Your New Jekyll Site
+title: Engineering Blog
 ---
 
-<div id="home">
+<div class="page-header">
   <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
 </div>
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p class="meta pull-right">Written on {{ post.date | date: "%B %d, %Y" }} by {{ post.author }}</p>
+      <div class="clearfix"></div>
+      <div class="post-content">
+      {{ post.content }}
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+<ul class="pager">
+  {% if paginator.next_page %}
+  <li class="previous"><a href="/page{{ paginator.next_page }}">&larr; Older</a></li>
+  {% else %}
+  <li class="previous disabled"><a href="#">&larr; Older</a></li>
+  {% endif %}
+  {% if paginator.previous_page %}
+  <li class="next"><a href="{% if paginator.previous_page == 1 %}/{% else %}/page{{ paginator.previous_page}}{% endif %}">Newer &rarr;</a></li>
+  {% else %}
+  <li class="next disabled"><a href="#">Newer &rarr;</a></li>
+  {% endif %}
+</ul>

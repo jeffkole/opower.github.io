@@ -30,8 +30,9 @@ bundle exec jekyll build
 
 # Show off the diff
 cd _site
-git add .
+git add -u .
 git diff --cached
+git status
 echo "Did that all look like what you expected?" >&2
 echo "Are you ready to commit that content change?" >&2
 echo "Once you type 'y', I will push the content live" >&2
@@ -43,10 +44,10 @@ fi
 
 # Push the content and the submodule SHA
 git commit -m "Publishes new content"
-git push git@github.com:opower/opower.github.io.git master
+git push git@github.com:opower/opower.github.io.git HEAD:master
 cd ..
 git commit -m "Syncs submodule with new published content" _site
-git push git@github.com:opower/opower.github.io.git working
+git push git@github.com:opower/opower.github.io.git HEAD:working
 
 echo "Content published.  Check out http://opower.github.io"
 

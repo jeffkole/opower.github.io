@@ -37,4 +37,4 @@ I'm sure I could have turned up logging somewhere, but I noticed Spring's Delega
 
 ![what_am_i_connecting_to](/img/what_am_i_connecting_to.png)
 
-There's the culprit!  localhost:5455.  You know, whoever the idiot is who runs that localhost server needs to get his act together.  I should call the guys from YouTube and have them do a Maury Povich-style video expose on why he can't keep any of his connections stable.
+There's the culprit!  `localhost:5455`.  You know, whoever the idiot is who runs that localhost server needs to get his act together.  I should call the guys from YouTube and have them do a Maury Povich-style video expose on why he can't keep any of his connections stable.
