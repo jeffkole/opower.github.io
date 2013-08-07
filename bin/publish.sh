@@ -30,7 +30,7 @@ bundle exec jekyll build
 
 # Show off the diff
 cd _site
-git add -u .
+git add --all
 git diff --cached
 git status
 echo "Did that all look like what you expected?" >&2
