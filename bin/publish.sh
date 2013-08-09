@@ -22,6 +22,8 @@ fi
 
 # Update the content in the submodule first
 cd _site
+git reset --hard HEAD
+git clean -df
 git pull git@github.com:opower/opower.github.io.git master
 
 # Now generate the new content
