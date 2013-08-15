@@ -1,4 +1,15 @@
 module Jekyll
+  class TeamConfiguration
+    DEFAULTS = {
+      'team_index' => true,
+      'team_dest'  => 'team'
+    }
+
+    def self.team_configuration(config)
+      DEFAULTS.merge(config['team'] || {})
+    end
+  end
+
   class TeamIndex < Page
     def initialize(site, base, dir)
       @site = site
@@ -6,9 +17,9 @@ module Jekyll
       @dir  = dir
       @name = "index.html"
 
+      self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'team.html')
       self.data['team'] = self.get_team(site)
-      self.process(@name)
     end
 
     def get_team(site)
@@ -33,10 +44,11 @@ module Jekyll
       @base     = base
       @dir      = dir
       @name     = "index.html"
-      self.data = YAML.load(File.read(File.join(@base, path)))
-      self.data['title'] = "#{self.data['name']} | #{self.data['role']}"
 
       self.process(@name)
+      self.read_yaml(File.join(base, '_layouts'), 'profile.html')
+      self.data = self.data.merge(YAML.load(File.read(File.join(@base, path))))
+      self.data['title'] = self.data['name']
     end
   end
 
@@ -45,42 +57,34 @@ module Jekyll
     priority :normal
 
     def generate(site)
-      write_team(site)
+      config = TeamConfiguration.team_configuration(site.config)
+      write_team(site, config)
     end
 
     # Loops through the list of team pages and processes each one.
-    def write_team(site)
+    def write_team(site, config)
       if Dir.exists?('_team')
         Dir.chdir('_team')
         Dir["*.yml"].each do |path|
           name = File.basename(path, '.yml')
-          self.write_person_index(site, "_team/#{path}", name)
+          self.write_person_index(site, config, "_team/#{path}", name)
         end
 
         Dir.chdir(site.source)
-        self.write_team_index(site)
+        if config['team_index']
+          self.write_team_index(site, config)
+        end
       end
     end
 
-    def write_team_index(site)
-      team = TeamIndex.new(site, site.source, "/team")
-      team.render(site.layouts, site.site_payload)
-      team.write(site.dest)
-
+    def write_team_index(site, config)
+      team = TeamIndex.new(site, site.source, "/#{config['team_dest']}")
       site.pages << team
-      site.static_files << team
     end
 
-    def write_person_index(site, path, name)
-      person = PersonIndex.new(site, site.source, "/team/#{name}", path)
-
-      if person.data['active']
-        person.render(site.layouts, site.site_payload)
-        person.write(site.dest)
-
-        site.pages << person
-        site.static_files << person
-      end
+    def write_person_index(site, config, path, name)
+      person = PersonIndex.new(site, site.source, "/#{config['team_dest']}/#{name}", path)
+      site.pages << person
     end
   end
 
@@ -95,17 +99,26 @@ module Jekyll
     def render(context)
       site = context.environments.first["site"]
       page = context.environments.first["page"]
+      config = TeamConfiguration.team_configuration(context.registers[:site].config)
 
-      if page
-        authors = page['author']
-        authors = [authors] if authors.is_a?(String)
+      authors = context.scopes.last['author']
+      authors = page['author'] if page && page['author']
+      authors = [authors] if authors.is_a?(String)
 
+      if authors
         "".tap do |output|
           authors.each do |author|
-            data     = YAML.load(File.read(File.join(site['source'], '_team', "#{author.downcase.gsub(' ', '-')}.yml")))
-            template = File.read(File.join(site['source'], '_includes', 'author.html'))
+            slug = "#{author.downcase.gsub(/[ .]/, '-')}"
+            file = File.join(site['source'], '_team', "#{slug}.yml")
+            if File.exists?(file)
+              data              = YAML.load(File.read(file))
+              data['permalink'] = "/#{config['team_dest']}/#{slug}"
+              template          = File.read(File.join(site['source'], '_includes', 'author.html'))
 
-            output << Liquid::Template.parse(template).render('author' => data)
+              output << Liquid::Template.parse(template).render('author' => data)
+            else
+              output << author
+            end
           end
         end
       end
