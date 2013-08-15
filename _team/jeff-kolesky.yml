@@ -1,0 +1,14 @@
+active: true
+type: employee
+author: jeff.kolesky
+name: Jeff Kolesky
+gravatar: ea130a1e97dba31377fcbe66f6d1e79f
+github: jeffkole
+twitter: jeffkole
+blog:
+blog:
+  url:  http://artisanalbytes.com/
+  name: Artisanal Bytes
+bio: |
+  Jeff joined Opower as the founding engineer and has been rockin' the big data
+  since sometime after that.

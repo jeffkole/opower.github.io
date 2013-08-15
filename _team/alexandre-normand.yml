@@ -1,0 +1,21 @@
+active: true
+type: employee
+author: alexandre.normand
+name: Alexandre Normand
+gravatar: 842a8cd45feda3ee59387ddb0cd59a3a
+github: alexandre-normand
+twitter: alex_normand
+blog:
+  url: http://heyitsalex.net/
+  name: Hey, It's Alex!
+bio: |
+  Alexandre is kickin' ass
+
+  He has been kicking ass most of his life
+
+  He also writes code like this:
+
+      1.minute plus 2.minutes
+      == another thing;
+
+  That's pretty awesome, right?
