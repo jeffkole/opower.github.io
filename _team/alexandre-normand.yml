@@ -9,13 +9,10 @@ blog:
   url: http://heyitsalex.net/
   name: Hey, It's Alex!
 bio: |
-  Alexandre is kickin' ass
+  Alex had the audacity to uproot his family from their confortable life in
+  Montréal to write software with a purpose at Opower. Without regrets, he 
+  spends his days excited about behavioral science, big data, open source
+  and [photo](http://www.flickr.com/photos/alexnormand/)
+  [graphy](http://500px.com/alexnormand). 
 
-  He has been kicking ass most of his life
-
-  He also writes code like this:
-
-      1.minute plus 2.minutes
-      == another thing;
-
-  That's pretty awesome, right?
+  On weekends, he might be seen writing [Go](http://golang.org/) in the alley.
