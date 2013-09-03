@@ -44,7 +44,7 @@ layout: default
       <h3>Posts</h3>
       <ul class="posts">
         {% for post in site.posts %}
-          {% if post.author == page.author %}
+          {% if post.author contains page.author %}
             <li><a href="{{ post.url }}">{{ post.title }}</a></li>
           {% endif %}
         {% endfor %}

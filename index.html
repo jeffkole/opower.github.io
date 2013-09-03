@@ -10,8 +10,7 @@ title: Engineering Blog
   {% for post in paginator.posts %}
   <div class="post">
     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    {% capture author %}{{ post.author }}{% endcapture %}
-    <p class="meta pull-right">Written on {{ post.date | date: "%B %d, %Y" }} by {% authors %}</p>
+    <p class="meta pull-right">Written on {{ post.date | date: "%B %d, %Y" }} by {{ post.author | to_author_links }}</p>
     <div class="clearfix"></div>
     <div class="post-content">
     {{ post.content }}
