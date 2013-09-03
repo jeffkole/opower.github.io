@@ -3,9 +3,8 @@ author: alexandre.normand
 layout: post
 title: The Big Data Elders, Archeology Hour
 ---
-After all that's been written about the [ancient Big Data elders]
-(http://opower.github.io/2013/07/07/the-story-of-the-big-data-elders/) and 
-their artful discoveries, it seems appropriate to now lift the curtain and 
+After all that's been written about the [ancient Big Data elders]({% post_url 2013-07-07-the-story-of-the-big-data-elders %})
+and their artful discoveries, it seems appropriate to now lift the curtain and
 reveal the modern, specific, and, sometimes dirty, details.
 
 Before we do, let's get something out in the open right now: working at 
@@ -13,8 +12,7 @@ Before we do, let's get something out in the open right now: working at
  world, using fancy and effective behavioral science while working with cool 
  and exciting tech. Awesome, right?
 
-### A brief history of data storage at Opower by [Jeff Kolesky]
-(/authors/jeff-kolesky/)
+### A brief history of data storage at Opower
 We have been using MySQL as our main database since day one.  It has been good 
 to us, and we have figured out how to scale it well enough.  But as our 
 business has grown, so have our data storage needs.  Each of our utility 
@@ -27,8 +25,8 @@ standard meter that is read once a month.
 As more and more utility companies install smart meters, we ingest more and 
 more of this higher resolution data, which comes in more frequently than 
 standard monthly data.  Those last two characteristics hit on two of the 
-“[three V’s](http://whatis.techtarget.com/definition/3Vs)” that define “Big 
-Data”: volume and velocity.  As we have collected the smart meter data over 
+"[three V’s](http://whatis.techtarget.com/definition/3Vs)" that define "Big
+Data": volume and velocity.  As we have collected the smart meter data over
 the last several years, we have figured out innovative ways to use it, and we 
 want to accelerate our learning using the data.  To achieve that, we needed a 
 system better suited to processing large amounts of data, and that is where 
@@ -56,7 +54,7 @@ For the demo, we gathered the table size data while our big test was running.
 We built a simple command-line tool that polls hdfs for the size of each 
 table's directory. It keeps track of the sizes and outputs a json time series 
 when the tool shuts down. It's designed to run from a gateway node that can 
-run the hadoop command and run ```hadoop fs du``` on hdfs.
+run the hadoop command and run `hadoop fs du` on hdfs.
 
 Source: [giant-squash](https://github.com/opower/giant-squash)
 
@@ -79,10 +77,9 @@ it in fast-motion.
 Based on this nice d3.js [Motion Chart](http://bost.ocks.org/mike/nations/) 
 demo, we created our version to animate the time series data. It reads the two 
 json dumps and merges this in one visualization. Granted, it violates some of 
-the [principles of data information visualization]
-(http://moz.com/blog/data-visualization-principles-lessons-from-tufte) but it 
-does make for a cool presentation and it gets people interested enough to ask 
-questions about it.   
+the [principles of data information visualization](http://moz.com/blog/data-visualization-principles-lessons-from-tufte)
+but it does make for a cool presentation and it gets people interested enough to
+ask questions about it.
 
 Source: [bloom-harvester](https://github.com/opower/bloom-harvester)
 
