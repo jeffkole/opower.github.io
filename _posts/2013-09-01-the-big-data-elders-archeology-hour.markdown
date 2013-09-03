@@ -1,5 +1,7 @@
 ---
-author: alexandre.normand
+author:
+- alexandre.normand
+- jeff.kolesky
 layout: post
 title: The Big Data Elders, Archeology Hour
 ---
