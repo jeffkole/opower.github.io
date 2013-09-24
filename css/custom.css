@@ -6,8 +6,8 @@ body {
 }
 
 body {
-  font-size: 13px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 24px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -45,13 +45,7 @@ p {
 
 /* Wrapper for page content to push down footer */
 #wrap {
-  background-color: #17294a;
-  background: -webkit-gradient(linear, 50% 0%, 50% 600, color-stop(0%, #187ec0), color-stop(100%, #17294a));
-  background: -webkit-linear-gradient(#187ec0 0%, #17294a 600px);
-  background: -moz-linear-gradient(#187ec0 0%, #17294a 600px);
-  background: -o-linear-gradient(#187ec0 0%, #17294a 600px);
-  background: -ms-linear-gradient(#187ec0 0%, #17294a 600px);
-  background: linear-gradient(#187ec0 0%, #17294a 600px);  font-family: Tahoma, Helvetica, Arial, sans-serif;
+  background-color: #1876b3;
   min-height: 100%;
   height: auto !important;
   height: 100%;
