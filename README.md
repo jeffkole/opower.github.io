@@ -8,7 +8,7 @@ Thank you.  Here are some helpful instructions for making that process easy.
 1. Clone the repo
 1. Install bundler if you don't already have it: `gem install bundler`
 1. Install the required gems, using bundler: `bundle install`
-1. Start up Jekyll in "watch" mode: `bundle exec jekyll serve --watch --drafts`
+1. Start up Jekyll in "watch" mode: `bundle exec jekyll serve --watch`
 1. Load up the site locally: `open http://localhost:4000`
 
 ## Making and submitting edits or new blog posts
@@ -30,9 +30,9 @@ The workflow for submitting a post goes like this:
 1. Update your local repo: `git pull origin`
 1. Fetch your fork, too: `git pull <remote-name>`
 1. Create a branch for your post: `git checkout -b <post-slug>`
-1. Write your new post as a draft: `vim _drafts/<date>-<post-slug>.markdown`
-1. Run Jekyll to check the content looks good: `bundle exec jekyll serve --watch --drafts`
-1. Commit your draft: `git commit _drafts/<date>-<post-slug>.md`
+1. Write your new post: `vim _posts/<date>-<post-slug>.markdown`
+1. Run Jekyll to check the content looks good: `bundle exec jekyll serve --watch`
+1. Commit your draft: `git commit _posts/<date>-<post-slug>.markdown`
 1. Push your draft to your fork: `git push <remote-name> <post-slug>`
 1. Open a pull request against `origin/working` on github.com
 
