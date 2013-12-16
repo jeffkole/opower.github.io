@@ -45,15 +45,15 @@ public class ClientBackedBulkIndexer implements BulkIndexer {
 
 {% highlight xml %}
 <bean id="client"
-      class="opower.elasticsearch.ElasticSearchNodeClientFactoryBean"
+      class="com.opower.elasticsearch.ElasticSearchNodeClientFactoryBean"
       p:clusterName="${elasticsearch.clustername:elasticsearch}"
       p:hosts="${elasticsearch.hosts:localhost}">
      <description>Elasticsearch node</description>
 </bean>
 
-<bean id="bulkIndexer" class="opower.elasticsearch.utils.BulkIndexerImpl">
-     <property name="client" ref="client"/> </bean>
-<bean/>
+<bean id="bulkIndexer" class="com.opower.elasticsearch.utils.BulkIndexerImpl">
+     <property name="client" ref="client"/>
+</bean>
 {% endhighlight %}
 
 Using the dependency injection capabilities of Spring we are able to
@@ -90,8 +90,6 @@ annotations allow us to describe the mapping directly on the relevant Java
 objects.
 
 {% highlight java %}
-package opower.elasticsearch.test;
-
 /**
  * This is a simple test type.
  */
@@ -105,7 +103,7 @@ public class SimpleType extends ElasticSearchEntity {
      private float aFloat;
      private double aDouble;
      public SimpleType(DateTime date, byte b, short s,
-                       int i, long l, float f, double d) {
+                         int i, long l, float f, double d) {
          super(null);
          this.dateTime = date;
          this.aByte = b;
@@ -187,14 +185,14 @@ growing. Some examples of this are: log messages (See
 
 {% highlight xml %}
 <bean id="strategy"
-      class="opower.elasticsearch.provisioning.TimeSeriesProvisionStrategy">
+      class="com.opower.elasticsearch.provisioning.TimeSeriesProvisionStrategy">
     <property name="client" ref="client"/>
 </bean>    
 
 <bean id="indexProvisioningService"
-      class="opower.elasticsearch.schema.SimpleIndexProvisioningService">
+      class="com.opower.elasticsearch.schema.SimpleIndexProvisioningService">
     <property name="client" ref="client"/>
-    <property name="strategy" ref="strategy" />
+    <property name="strategy" ref="strategy"/>
 </bean>
 {% endhighlight %}
 
@@ -211,12 +209,12 @@ setting a few configuration parameters to expand the capacity of your existing
 index by automatically creating new shards.
 
 {% highlight xml %}
-<bean id="strategy" class="opower.elasticsearch.provisioning.UserDataProvisionStrategy">
+<bean id="strategy" class="com.opower.elasticsearch.provisioning.UserDataProvisionStrategy">
     <property name="client" ref="client"/>
 </bean>
 
 <bean id="indexProvisioningService"
-      class="opower.elasticsearch.schema.SimpleIndexProvisioningService">
+      class="com.opower.elasticsearch.schema.SimpleIndexProvisioningService">
     <property name="client" ref="client"/>
     <property name="strategy" ref="strategy" />
 </bean>
