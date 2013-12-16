@@ -1,5 +1,5 @@
 ---
-author: ben.siemon
+author: Ben Siemon
 comments: true
 date: 2013-12-15 
 layout: post
