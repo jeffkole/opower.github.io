@@ -1,19 +1,7 @@
 ---
-author: Ben Siemon
-comments: true
-date: 2013-12-15 
 layout: post
-slug: elasticsearch-at-opower
 title: Elasticsearch at Opower
-wordpress_id: 4
-categories:
-- Code
-- Development
-- Elasticsearch
-tags:
-- spring
-- elasticsearch
-- java
+author: ben.siemon
 ---
 
 We use [Elasticsearch](http://www.elasticsearch.org/) to provide real time
@@ -26,7 +14,7 @@ As we traveled the path of adopting Elasticsearch we found a few places that
 needed additional code to fit in with our technology stack at Opower. In this
 post I will go over a few of these spots and how we chose to solve them.
 
-## Spring
+### Spring
 
 Spring has long since spread tendrils through the Opower code base. See
 [Upgrading Spring](http://opower.github.io/2012/09/06/upgrading-from-spring-3-0-x-to-spring-3-1-x).
@@ -40,7 +28,6 @@ An abstraction built over the bulk index capabilities of the `Client` object cou
 be exposed via Spring like:
 
 {% highlight java %}
-
 public class ClientBackedBulkIndexer implements BulkIndexer {
 
     private Client client;
@@ -67,7 +54,6 @@ public class ClientBackedBulkIndexer implements BulkIndexer {
 <bean id="bulkIndexer" class="opower.elasticsearch.utils.BulkIndexerImpl">
      <property name="client" ref="client"/> </bean>
 <bean/>
-
 {% endhighlight %}
 
 Using the dependency injection capabilities of Spring we are able to
@@ -76,7 +62,7 @@ up with methods that take a `Client`, index name and alias name sprinkled
 everywhere. This is a fairly basic example but should provide an idea of what to
 expect when using the out of the box Java `Client`.
 
-## Index Creation and Maintenance
+### Index Creation and Maintenance
 
 Immutability is one of the driving forces behind the speed and correctness of
 Elasticsearch. However embracing immutability comes with a price. When an index
@@ -192,7 +178,7 @@ Using these two components we can create a system that automatically provisions
 new indices based on some user defined strategy. These strategies fall into two
 rough categories.
 
-### Time Series Data
+#### Time Series Data
 
 Time series data grows in proportion to the passage of time. Any initial shard
 count will eventually run out of capacity since the data size is constantly
@@ -216,7 +202,7 @@ In this case the `TimeSeriesProvisionStrategy` checks the document count in the
 active index then creates new indices if warranted. Consuming client code is only
 required to call `indexProvisioningService.provisionIndex(...)`
 
-### User data
+#### User data
 
 User data grows in proportion to your user base. Initial shard counts could end
 up fitting your needs but that likely means your company is not growing. Let's
@@ -240,9 +226,9 @@ In this case the `UserDataProvisionStrategy` checks the document count in the
 index configured for the active client and chooses if more capacity should be
 added.
 
-## Optimizations and Best Practices
+### Optimizations and Best Practices
 
-### When returning all IDs from a query
+#### When returning all IDs from a query
 
 By default queries created by
 [SearchRequestBuilder](https://github.com/elasticsearch/elasticsearch/blob/c7f6c5266d15fefa1a5ce9ae7ffc519c5ff8abbe/src/main/java/org/elasticsearch/action/search/SearchRequestBuilder.java)
@@ -253,7 +239,7 @@ results. However, if you only need to access the document IDs you should call
 need the document IDs and knocks the query time down to as little as 2 seconds,
 which is acceptable for our batch processing jobs.
 
-### Use static mappings
+#### Use static mappings
 
 Out of the box Elasticsearch is incredibly dynamic and malleable. These are
 amazing features for POC work and getting to know Elasticsearch. Once you move
@@ -262,7 +248,7 @@ mapping forces indexing applications to only index data that conforms to the
 original mapping. This prevents any bugs that result from out of sync indexing
 code and existing indices.
 
-### Avoid repeated updates to existing documents
+#### Avoid repeated updates to existing documents
 
 Say you have a document with 5 fields. You get each of these fields from 5
 different places. The simplest solution would be:
@@ -280,7 +266,7 @@ that ultimately must be cleaned up. It is better to avoid repeated indexing if
 possible by reading each field, joining them together, then performing one index
 operation.
 
-## Here be dragons
+### Here be dragons
 
 Ultimately our experience with Elasticsearch has been incredibly positive.
 Development by the Elasticsearch core team and the community at large continues
